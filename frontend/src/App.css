@@ -1,0 +1,263 @@
+/* ==================== Global Styles ==================== */
+
+* {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #f0f2f5;
+  min-height: 100vh;
+}
+
+/* ==================== Navbar ==================== */
+
+.navbar-custom {
+  background: linear-gradient(135deg, #1a2980 0%, #26d0ce 100%);
+  box-shadow: 0 4px 20px rgba(26, 41, 128, 0.25);
+}
+
+.navbar-custom .navbar-brand {
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: -0.5px;
+}
+
+/* ==================== Auth Cards (Login/Register) ==================== */
+
+.auth-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a2980 0%, #26d0ce 100%);
+}
+
+.auth-card {
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  width: 100%;
+  max-width: 420px;
+}
+
+.auth-card .card-body {
+  padding: 2.5rem;
+}
+
+.auth-card h3 {
+  font-weight: 700;
+  color: #1a2980;
+}
+
+.auth-card h3 svg {
+  vertical-align: -2px;
+  margin-right: 8px;
+}
+
+/* ==================== Buttons ==================== */
+
+.btn-gradient {
+  background: linear-gradient(135deg, #1a2980 0%, #26d0ce 100%);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(26, 41, 128, 0.35);
+  color: #fff;
+}
+
+/* ==================== Dashboard ==================== */
+
+.dashboard-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.form-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  border-left: 4px solid #1a2980;
+}
+
+.form-card h5 svg {
+  vertical-align: -2px;
+  margin-right: 6px;
+}
+
+/* ==================== Table ==================== */
+
+.table thead {
+  background: linear-gradient(135deg, #1a2980 0%, #26d0ce 100%);
+  color: #fff;
+}
+
+.table thead th {
+  border: none;
+  font-weight: 600;
+  padding: 0.9rem 0.75rem;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.table tbody td {
+  vertical-align: middle;
+  padding: 0.7rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+.table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.table tbody tr:hover {
+  background-color: rgba(26, 41, 128, 0.04);
+}
+
+/* ==================== Badges ==================== */
+
+.badge-draft {
+  background-color: #ffc107;
+  color: #333;
+  font-weight: 600;
+  padding: 0.35em 0.7em;
+  border-radius: 6px;
+  font-size: 0.78rem;
+}
+
+.badge-diajukan {
+  background-color: #198754;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.35em 0.7em;
+  border-radius: 6px;
+  font-size: 0.78rem;
+}
+
+/* ==================== Tujuan Labels ==================== */
+
+.tujuan-rapat { color: #6f42c1; font-weight: 600; }
+.tujuan-kelas { color: #0d6efd; font-weight: 600; }
+.tujuan-seminar { color: #d63384; font-weight: 600; }
+
+/* ==================== Surat Page ==================== */
+
+.surat-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.surat-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+}
+
+.surat-card .info-row {
+  display: flex;
+  border-bottom: 1px solid #eee;
+  padding: 0.6rem 0;
+}
+
+.surat-card .info-row:last-child {
+  border-bottom: none;
+}
+
+.surat-card .info-label {
+  width: 160px;
+  font-weight: 600;
+  color: #555;
+  flex-shrink: 0;
+}
+
+.surat-card .info-value {
+  flex: 1;
+}
+
+/* ==================== 404 Page ==================== */
+
+.not-found {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a2980 0%, #26d0ce 100%);
+  color: #fff;
+}
+
+.not-found h1 {
+  font-size: 8rem;
+  font-weight: 800;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ==================== Animations ==================== */
+
+.fade-in {
+  animation: fadeIn 0.4s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ==================== Form Controls ==================== */
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #1a2980;
+  box-shadow: 0 0 0 0.2rem rgba(26, 41, 128, 0.15);
+}
+
+/* ==================== Action Buttons in Table ==================== */
+
+.btn-action {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.82rem;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.btn-action svg {
+  font-size: 0.85rem;
+}
+
+/* ==================== Print Styles ==================== */
+
+@media print {
+  .navbar-custom,
+  .no-print {
+    display: none !important;
+  }
+
+  .surat-card {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+
+  body {
+    background: #fff;
+  }
+}
+
+/* ==================== Responsive ==================== */
+
+@media (max-width: 576px) {
+  .auth-card .card-body {
+    padding: 1.8rem;
+  }
+}
