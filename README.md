@@ -166,4 +166,7 @@ Dokumentasi Agile/Scrum lengkap (backlog, sprint planning/review/retro) ada di [
 
 ## Anggota Kelompok
 
-Nama — NIM
+| Nama | NIM |
+|---|---|
+| Abdullah Asy-Syifawi | 2408107010042 |
+| Ahmad Daniel Chalid | 2408107010061 |
