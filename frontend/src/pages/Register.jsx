@@ -5,7 +5,7 @@ import { BsPersonPlus } from 'react-icons/bs';
 const API = 'http://localhost:5000/api';
 
 export default function Register() {
-  const [form, setForm] = useState({ username: '', password: '' });
+  const [form, setForm] = useState({ username: '', password: '', confirmPassword: '' });
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
   const [loading, setLoading] = useState(false);
@@ -29,13 +29,16 @@ export default function Register() {
     if (form.password.length < 3) {
       return setError('Password minimal 3 karakter.');
     }
+    if (form.password !== form.confirmPassword) {
+      return setError('Konfirmasi password tidak sama.');
+    }
 
     setLoading(true);
     try {
       const res = await fetch(`${API}/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ username: form.username, password: form.password }),
       });
       const data = await res.json();
 
@@ -83,6 +86,19 @@ export default function Register() {
                 className="form-control"
                 placeholder="Minimal 3 karakter"
                 value={form.password}
+                onChange={handleChange}
+                minLength={3}
+                required
+              />
+            </div>
+            <div className="mb-3">
+              <label className="form-label fw-semibold">Konfirmasi Password</label>
+              <input
+                type="password"
+                name="confirmPassword"
+                className="form-control"
+                placeholder="Ulangi password"
+                value={form.confirmPassword}
                 onChange={handleChange}
                 minLength={3}
                 required
