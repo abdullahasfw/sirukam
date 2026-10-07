@@ -1,0 +1,38 @@
+services:
+  app:
+    build: .
+    image: d4n13l7th/projek-popl:submit-UTS
+    container_name: sirukam-app
+    ports:
+      - "5000:5000"
+    environment:
+      DB_HOST: db
+      DB_USER: root
+      DB_PASSWORD: ""
+      DB_NAME: peminjaman_ruang
+      JWT_SECRET: rahasia-jwt-kampus-2026
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  db:
+    build:
+      context: .
+      dockerfile: docker/mysql/Dockerfile
+    image: d4n13l7th/projek-popl-db:submit-UTS
+    container_name: sirukam-db
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: peminjaman_ruang
+    volumes:
+      - db-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+
+volumes:
+  db-data:
